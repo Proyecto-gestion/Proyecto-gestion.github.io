@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nuevo Proyecto</title>
+  <link rel="stylesheet" href="nuevo-proyecto.css" />
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="topbar">
+    <a class="icon-btn back" href="investigacion-aplicada.html" aria-label="Volver" title="Volver">‹</a>
+    <h1 class="topbar__title">Nuevo Proyecto</h1>
+  </header>
+
+  <!-- Formulario -->
+  <main class="container">
+    <form id="newProjectForm">
+      <section class="form-section">
+        <h2>Información General del Proyecto</h2>
+
+        <div class="form-group">
+          <label for="titulo">Título del proyecto</label>
+          <input type="text" id="titulo" name="titulo" placeholder="Título del proyecto" required />
+        </div>
+
+        <div class="form-group">
+          <label for="programa-estudio">Programa de Estudio</label>
+          <select id="programa-estudio" name="programa-estudio" required>
+            <option value="">Selecciona el Programa de Estudio</option>
+            <option value="asistencia-administrativa">Asistencia Administrativa</option>
+            <option value="diseno-programacion-web">Diseño y Programación Web</option>
+            <option value="electricidad-industrial">Electricidad Industrial</option>
+            <option value="electronica-industrial">Electrónica Industrial</option>
+            <option value="mantenimiento-maquinaria-pesada">Mantenimiento de Maquinaria Pesada</option>
+            <option value="mecatronica-automotriz">Mecatrónica Automotriz</option>
+            <option value="mecanica-produccion-industrial">Mecánica de Producción Industrial</option>
+            <option value="metalurgia">Metalurgia</option>
+            <option value="tecnologia-analisis-quimico">Tecnología de Análisis Químico</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="linea_investigacion">Línea de investigación</label>
+          <input type="text" id="linea_investigacion" name="linea_investigacion" placeholder="Línea de investigación" required />
+        </div>
+
+        <div class="form-group">
+          <label for="investigadores">Investigador(es)</label>
+          <input type="text" id="investigadores" name="investigadores" placeholder="Nombre(s) de los investigadores" required />
+        </div>
+
+        <div class="form-group">
+          <label for="objetivo">Objetivo del proyecto</label>
+          <textarea id="objetivo" name="objetivo" placeholder="Objetivo del proyecto" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="beneficiarios">Beneficiarios</label>
+          <input type="text" id="beneficiarios" name="beneficiarios" placeholder="Beneficiarios directos e indirectos" required />
+        </div>
+
+        <div class="form-group">
+          <label for="localizacion">Localización</label>
+          <input type="text" id="localizacion" name="localizacion" placeholder="Ubicación geográfica" required />
+        </div>
+
+        <div class="form-group">
+          <label for="fechas">Fecha de inicio y finalización</label>
+          <input type="text" id="fechas" name="fechas" placeholder="Ej. 01/01/2025 - 31/12/2025" required />
+        </div>
+      </section>
+
+      <!-- Botón de envío -->
+      <button type="submit" id="submitBtn">Crear Proyecto</button>
+    </form>
+  </main>
+
+  <!-- Supabase JS (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>
+  <script src="nuevo-proyecto1.js" defer></script>
+</body>
+</html>

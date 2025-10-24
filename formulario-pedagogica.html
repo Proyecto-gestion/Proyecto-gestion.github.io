@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulario Innovación Pedagogica y Tecnologica</title>
+  <link rel="stylesheet" href="formulario-innovacion.css" />
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <a class="icon-btn back" href="innovacion-pedagogica.html" aria-label="Volver" title="Volver">‹</a>
+    <h1 class="topbar__title">Formulario Pedagógica y Tecnológica</h1>
+    <span class="topbar__spacer" aria-hidden="true"></span>
+  </header>
+
+  <main class="container">
+    <!-- Información del Proyecto -->
+    <section id="projectInfo" class="card" style="margin-bottom:12px">
+      <div class="card__avatar" aria-hidden="true">🧪</div>
+      <div class="card__body">
+        <h2 id="projectTitle" class="card__title">Cargando...</h2>
+        <div class="card__meta">
+          <span><strong>Investigador(es):</strong> <span id="projectAuthor">Cargando...</span></span>
+          <span>•</span>
+          <span><strong>ID:</strong> <span id="projectId">—</span></span>
+        </div>
+        <p id="projectDescription" class="empty__desc" style="margin:6px 0 0">Cargando...</p>
+      </div>
+    </section>
+
+    <!-- Botones -->
+    <section class="buttons-section" style="margin-bottom:12px">
+      <button id="btnProyecto" class="btn btn-yellow">Proyecto</button>
+      <button id="btnInforme"  class="btn btn-celeste">Informe Final</button>
+    </section>
+
+    <!-- Formulario dinámico (se muestra según el botón) -->
+    <section id="formWrap" class="card form" hidden></section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="formulario-pedagogica.js" defer></script>
+</body>
+</html>

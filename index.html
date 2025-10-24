@@ -66,8 +66,8 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 
   <script>
-    const SUPABASE_URL = "https://uvhzeqemkmekgwhqczth.supabase.co";     // Reemplaza con tu URL de Supabase
-    const SUPABASE_ANON_KEY = "tu-llave-publica";                          // Reemplaza con tu clave pública
+    const SUPABASE_URL = "https://uvhzeqemkmekgwhqczth.supabase.co";     // ← reemplaza
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2aHplcWVta21la2d3aHFjenRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjExODQ2MzUsImV4cCI6MjA3Njc2MDYzNX0.vJtoznHXAnuBZNABDI8gZARYgXgIVuL-Y6Ut8XL88z8";                    // ← reemplaza (key pública)
     const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     // Referencias
@@ -143,7 +143,7 @@
       }
     };
 
-    const GOOGLE_CLIENT_ID = "tu-client-id-google"; // Reemplaza con tu CLIENT_ID de Google
+    const GOOGLE_CLIENT_ID = "1008394701653-k2eaia30kgd2ccmpj66ibltmi03s4hj8.apps.googleusercontent.com"; // Reemplaza con tu CLIENT_ID de Google
     window.onload = function () {
       google.accounts.id.initialize({
         client_id: GOOGLE_CLIENT_ID,
@@ -157,3 +157,5 @@
   </script>
 </body>
 </html>
+
+

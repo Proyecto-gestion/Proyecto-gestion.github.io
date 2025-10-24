@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Innovación Tecnológica</title>
+  <link rel="stylesheet" href="innovacion.css" />
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <a class="icon-btn back" href="categorias.html" aria-label="Volver" title="Volver">‹</a>
+    <h1 class="topbar__title">Innovación Tecnológica</h1>
+    <span class="topbar__spacer" aria-hidden="true"></span>
+  </header>
+
+  <main class="container">
+    <!-- Buscador -->
+    <section class="search-wrap" role="search">
+      <div class="search">
+        <span class="search__icon" aria-hidden="true">🔎</span>
+        <input id="q" type="search" placeholder="Buscar proyectos o investigadores…" autocomplete="off" />
+        <button id="clearBtn" class="search__clear" aria-label="Limpiar">✕</button>
+      </div>
+    </section>
+
+    <!-- Resumen / Filtros -->
+    <section class="list-head">
+      <div class="list-count" id="listCount">0 proyectos</div>
+      <button class="pill-btn" id="filterBtn" title="Ordenar/filtrar">⋯</button>
+    </section>
+
+    <!-- Aviso éxito -->
+    <div id="successBar" class="success-bar" hidden>
+      ✅ Formulario actualizado exitosamente
+    </div>
+
+    <!-- Lista de proyectos -->
+    <section id="list" class="list"></section>
+
+    <!-- Estado vacío (se oculta automáticamente si hay resultados) -->
+    <section id="empty" class="empty" hidden>
+      <div class="empty__icon" aria-hidden="true">🧑‍🔬</div>
+      <h2 class="empty__title">¡Innova con tu primer proyecto!</h2>
+      <p class="empty__desc">No hay proyectos de innovación registrados aún.</p>
+      <p class="empty__desc">Toca el botón <strong>+</strong> para crear una nueva innovación.</p>
+    </section>
+  </main>
+
+  <!-- Botón flotante -->
+  <button id="fab" class="fab" title="Nuevo Proyecto" aria-label="Nuevo Proyecto">
+    <span class="fab__plus">+</span>
+    <span class="fab__label">Nuevo Proyecto</span>
+  </button>
+
+
+  <!-- Asegúrate de que esta línea esté antes de cualquier script que intente usar supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> <!-- CDN de Supabase -->
+  <script src="innovacion.js" defer></script>
+</body>
+</html>

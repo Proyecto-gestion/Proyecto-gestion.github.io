@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Investigación e Innovación</title>
+  <link rel="stylesheet" href="categorias.css" />
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="topbar">
+    <h1 class="topbar__title">Investigación e Innovación</h1>
+    <button class="icon-btn logout" id="logoutBtn" aria-label="Cerrar sesión" title="Cerrar sesión">⎋</button>
+  </header>
+
+  <!-- Contenido -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero__icon" aria-hidden="true">▦</div>
+      <h2 class="hero__title">Seleccione una categoría</h2>
+      <p class="hero__subtitle">Explore nuestras áreas de trabajo</p>
+    </section>
+
+    <nav class="grid">
+      <!-- Tarjeta 1 - Innovación Tecnológica -->
+      <a href="innovacion.html" class="card card--blue" data-cat="tecnologica">
+        <div class="card__icon" aria-hidden="true">🧩</div>
+        <div class="card__body">
+          <h3 class="card__title">Innovación Tecnológica</h3>
+          <p class="card__desc">Proyectos de desarrollo tecnológico e innovación</p>
+        </div>
+        <div class="card__chev" aria-hidden="true">›</div>
+        <span class="ripple"></span>
+      </a>
+
+      <!-- Tarjeta 2 - Investigación Aplicada -->
+      <a href="investigacion-aplicada.html" class="card card--green" data-cat="aplicada">
+        <div class="card__icon" aria-hidden="true">⚗️</div>
+        <div class="card__body">
+          <h3 class="card__title">Investigación Aplicada</h3>
+          <p class="card__desc">Proyectos científicos y tecnológicos</p>
+        </div>
+        <div class="card__chev" aria-hidden="true">›</div>
+        <span class="ripple"></span>
+      </a>
+
+      <!-- Tarjeta 3 - Innovación Pedagógica -->
+      <a href="innovacion-pedagogica.html" class="card card--orange" data-cat="pedagogica">
+        <div class="card__icon" aria-hidden="true">🎓</div>
+        <div class="card__body">
+          <h3 class="card__title">Innovación Pedagógica</h3>
+          <p class="card__desc">Proyectos de innovación en métodos de enseñanza</p>
+        </div>
+        <div class="card__chev" aria-hidden="true">›</div>
+        <span class="ripple"></span>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Proyecto I+I</small>
+  </footer>
+
+  <!-- Supabase y script -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="categorias.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #5b6473;
+
+  --blue: #2563eb;
+  --green: #16a34a;
+  --orange: #ea580c;
+
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+  --shadow-sm: 0 3px 10px rgba(16, 24, 40, 0.06);
+
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg), #fff 65%);
+}
+
+/* ================================
+   ENCABEZADO SUPERIOR
+   ================================ */
+.topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  background: linear-gradient(180deg, #2b6de7, #1e4bd6);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+}
+
+.topbar__title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  transition: background 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Botón de cerrar sesión */
+.logout {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+   ================================ */
+.container {
+  width: 100%;
+  max-width: 920px;
+  margin: 18px auto;
+  padding: 0 16px 24px;
+}
+
+/* ================================
+   SECCIÓN HERO
+   ================================ */
+.hero {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  margin: 8px 0 18px;
+}
+
+.hero__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: #1f3b9c;
+  background: #e8efff;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__title {
+  margin: 6px 0 4px;
+  font-size: 1.25rem;
+}
+
+.hero__subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ================================
+   GRID DE TARJETAS
+   ================================ */
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================================
+   TARJETAS DE CATEGORÍA
+   ================================ */
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+  transition: transform 0.08s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(16, 24, 40, 0.1);
+}
+
+.card:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Colores temáticos */
+.card--blue {
+  background: linear-gradient(
+      180deg,
+      rgba(37, 99, 235, 0.1),
+      rgba(37, 99, 235, 0.08)
+    ),
+    var(--surface);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+.card--green {
+  background: linear-gradient(
+      180deg,
+      rgba(22, 163, 74, 0.1),
+      rgba(22, 163, 74, 0.08)
+    ),
+    var(--surface);
+  border-color: rgba(22, 163, 74, 0.15);
+}
+
+.card--orange {
+  background: linear-gradient(
+      180deg,
+      rgba(234, 88, 12, 0.1),
+      rgba(234, 88, 12, 0.08)
+    ),
+    var(--surface);
+  border-color: rgba(234, 88, 12, 0.15);
+}
+
+/* Contenido interno de tarjeta */
+.card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.card--blue .card__icon {
+  color: var(--blue);
+}
+.card--green .card__icon {
+  color: var(--green);
+}
+.card--orange .card__icon {
+  color: var(--orange);
+}
+
+.card__title {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.card__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.card__chev {
+  font-size: 28px;
+  line-height: 1;
+  color: #2b2b2b50;
+  padding-top: 2px;
+}
+
+/* ================================
+   EFECTO RIPPLE
+   ================================ */
+.card .ripple {
+  position: absolute;
+  inset: auto;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.35s ease;
+}
+
+.card:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 2px;
+}
+
+/* ================================
+   PIE DE PÁGINA
+   ================================ */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 12px 16px 24px;
+  font-size: 0.9rem;
+}

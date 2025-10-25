@@ -1,0 +1,303 @@
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #5b6473;
+  --primary: #2563eb;
+  --primary-2: #1d4ed8;
+  --ok: #16a34a;
+  --ok-2: #22c55e;
+  --yellow: #f59e0b;   /* Proyecto */
+  --celeste: #38bdf8;  /* Informe Final */
+
+  --radius: 16px;
+  --radius-sm: 12px;
+  --shadow: 0 10px 30px rgba(16, 24, 40, .08);
+  --shadow-sm: 0 3px 10px rgba(16, 24, 40, .06);
+
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg), #fff 65%);
+}
+
+/* Topbar (consistente con innovacion.css) */
+.topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  background: linear-gradient(180deg, #2b6de7, #1e4bd6);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+}
+.topbar__title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+}
+.icon-btn {
+  width: 36px; height: 36px;
+  border: none; border-radius: 10px;
+  background: rgba(255, 255, 255, .12);
+  color: #fff; display: grid; place-items: center;
+  text-decoration: none; font-size: 22px; cursor: pointer;
+}
+.icon-btn:hover { background: rgba(255, 255, 255, .18); }
+.topbar__spacer { width: 36px; height: 36px; }
+
+/* Contenedor principal */
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 18px auto;
+  padding: 0 16px 40px;
+}
+
+/* Cabecera de detalle: info + botones a la derecha */
+.detail-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.project-info {
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid rgba(15, 23, 42, .06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+}
+.project-info__avatar {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: #e8efff; color: #1e40af;
+  font-weight: 800; box-shadow: var(--shadow-sm);
+  font-size: 22px;
+}
+.project-info__body { min-width: 0; }
+.project-info h2 {
+  margin: 0 0 6px;
+  font-size: 1.28rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  line-height: 1.2;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.project-meta {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  color: var(--muted); font-size: .92rem; margin-bottom: 6px;
+}
+.project-meta span { display: inline-flex; gap: 6px; align-items: center; }
+.project-desc {
+  margin: 4px 0 0;
+  color: #475569;
+  font-size: .96rem;
+}
+
+/* Columna de botones (a la derecha) */
+.buttons-card {
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid rgba(15, 23, 42, .06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-width: 220px;
+}
+
+/* Botones */
+.btn {
+  padding: 12px 16px;
+  font-size: .98rem;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform .06s ease, box-shadow .12s ease, filter .12s ease;
+  box-shadow: var(--shadow-sm);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(.99); }
+
+.btn-yellow  { background: var(--yellow);  color:#fff; border-color: #fbbf24; }
+.btn-celeste { background: var(--celeste); color:#fff; border-color: #7dd3fc; }
+
+.btn-yellow:focus,
+.btn-celeste:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(147,197,253,.35);
+}
+
+/* Formulario dinámico (card) */
+.form {
+  margin-top: 12px;
+  background: var(--surface);
+  border: 1px solid rgba(15, 23, 42, .06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+.form .card__title {
+  margin: 0 0 8px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* Layout del formulario */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 6px;
+}
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field--full { grid-column: 1 / -1; }
+
+.field label {
+  font-weight: 700;
+  color: #334155;
+  font-size: .92rem;
+}
+
+.field input,
+.field textarea,
+.field select {
+  border: 1px solid rgba(15,23,42,.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: .96rem;
+  outline: none;
+  background: #fff;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  transition: border-color .12s ease, box-shadow .12s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder { color: #9ca3af; }
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(147,197,253,.35);
+}
+
+/* Acciones del formulario */
+.form-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.form-actions .btn {
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid rgba(15,23,42,.12);
+}
+.form-actions .btn:hover { filter: brightness(0.98); }
+
+/* Secciones plegables opcionales (si las usas) */
+.form-sections { margin-top: 20px; }
+.form-section {
+  margin-bottom: 14px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+  border: 1px solid rgba(15,23,42,.06);
+}
+.form-section .toggle-btn {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 800;
+  border: none;
+  padding: 10px 12px;
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.form-section .toggle-btn:hover { background-color: var(--primary-2); }
+.form-section .form-content { display: none; margin-top: 10px; }
+.form-section .form-content input,
+.form-section .form-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 0;
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,42,.12);
+  font-size: .96rem;
+}
+
+/* Utilidades */
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .82rem;
+  border: 1px solid rgba(15, 23, 42, .08);
+  background: #f8fafc;
+  color: #334155;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .detail-header {
+    grid-template-columns: 1fr;
+  }
+  .buttons-card {
+    display: flex;
+    gap: 10px;
+    min-width: unset;
+  }
+  .buttons-card .btn {
+    flex: 1 1 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .project-info {
+    grid-template-columns: 1fr;
+  }
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+/* Estilos para el porcentaje */
+.percent {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.percent.green {
+  background-color: #16a34a; /* Verde */
+  color: white;
+}
+
+.percent.red {
+  background-color: #ef4444; /* Rojo */
+  color: white;
+}

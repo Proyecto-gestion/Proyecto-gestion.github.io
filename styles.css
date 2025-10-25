@@ -1,0 +1,233 @@
+/* ===========================
+   ESTILOS GENERALES
+   =========================== */
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --accent: #06b6d4;
+  --muted: #6b7280;
+  --danger: #ef4444;
+  --shadow: 0 6px 20px rgba(16, 24, 40, 0.08);
+  --radius: 12px;
+
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #ffffff 60%);
+  color: #0f172a;
+}
+
+/* ===========================
+   CONTENEDOR PRINCIPAL
+   =========================== */
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ===========================
+   TARJETA CENTRAL (FORM)
+   =========================== */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.brand {
+  margin: 0 0 12px 0;
+  font-size: 1.6rem;
+  letter-spacing: 0.2px;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* ===========================
+   CAMPOS DE FORMULARIO
+   =========================== */
+.field {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6eef8;
+  background: #fbfdff;
+  font-size: 0.98rem;
+  outline: none;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+input:focus {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.06);
+  border-color: var(--primary);
+}
+
+/* ===========================
+   CONTRASEÑA Y BOTÓN OJO
+   =========================== */
+.password-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+}
+
+.toggle-pwd {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.toggle-pwd:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+/* ===========================
+   BOTONES
+   =========================== */
+.btn {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.12);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: var(--primary);
+}
+
+/* ===========================
+   TEXTOS Y LINKS
+   =========================== */
+.hint {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 6px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.86rem;
+  margin: 6px 0 0 0;
+  min-height: 18px;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   SECCIONES AUXILIARES
+   =========================== */
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.spaced {
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+}
+
+.or {
+  text-align: center;
+  margin: 12px 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.result {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ===========================
+   PIE DE PÁGINA
+   =========================== */
+.footer {
+  margin-top: 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 420px) {
+  .card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .brand {
+    font-size: 1.25rem;
+  }
+}

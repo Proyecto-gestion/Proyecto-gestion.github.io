@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plataforma de Gestión de Proyectos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container" id="main">
+    <section class="card" aria-labelledby="title">
+      <h1 id="title" class="brand">Gestión de Proyectos</h1>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="tucorreo@ejemplo.com"
+            required
+            autocomplete="username"
+            aria-describedby="emailHelp"
+          />
+          <small id="emailHelp" class="hint">Usa tu correo</small>
+          <p class="error" id="emailError" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="password">Contraseña</label>
+          <div class="password-wrapper">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="••••••••"
+              required
+              minlength="6"
+              autocomplete="current-password"
+              aria-describedby="pwdHelp"
+            />
+            <button type="button" class="toggle-pwd" id="togglePwd" aria-label="Mostrar contraseña">👁️</button>
+          </div>
+          <small id="pwdHelp" class="hint">Mínimo 6 caracteres</small>
+          <p class="error" id="pwdError" aria-live="polite"></p>
+        </div>
+
+        <button id="submitBtn" class="btn primary" type="submit">Iniciar sesión</button>
+
+        <div class="or"></div>
+        <p class="result" id="result" aria-live="polite"></p>
+      </form>
+
+    </section>
+  </main>
+
+  <!-- Supabase JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js" defer></script>
+
+  <script>
+    // Variables de configuración Supabase
+    const SUPABASE_URL = "https://uvhzeqemkmekgwhqczth.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2aHplcWVta21la2d3aHFjenRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjExODQ2MzUsImV4cCI6MjA3Njc2MDYzNX0.vJtoznHXAnuBZNABDI8gZARYgXgIVuL-Y6Ut8XL88z8"; // Reemplaza con tu clave pública
+
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Referencias a elementos HTML
+    const form = document.getElementById("loginForm");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const result = document.getElementById("result");
+    const togglePwd = document.getElementById("togglePwd");
+
+    // Función para mostrar u ocultar la contraseña
+    togglePwd.addEventListener("click", () => {
+      const showing = password.type === "text";
+      password.type = showing ? "password" : "text";
+      togglePwd.classList.toggle("is-on", !showing);
+      togglePwd.setAttribute("aria-pressed", String(!showing));
+    });
+
+    // Manejo del formulario de login
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const mailVal = email.value.trim();
+      const pwdVal = password.value;
+
+      if (!mailVal || !pwdVal || pwdVal.length < 6) {
+        result.textContent = "Correo o contraseña inválidos.";
+        result.style.color = "red";
+        return;
+      }
+
+      result.textContent = "Iniciando sesión...";
+      result.style.color = "green";
+
+      // Realiza la autenticación usando el email y la contraseña
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: mailVal,
+        password: pwdVal,
+      });
+
+      if (error) {
+        result.textContent = error.message;
+        result.style.color = "red";
+        return;
+      }
+
+      // Redirigir si el inicio de sesión es exitoso
+      setTimeout(() => {
+        window.location.href = "categorias.html";  // Redirige a la página de categorías
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
+

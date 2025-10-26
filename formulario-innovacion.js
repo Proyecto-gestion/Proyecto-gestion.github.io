@@ -189,7 +189,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           ${yn('s16', '1.6. Costo del proyecto')}
           ${yn('s17', '1.7. Lugar de ejecución')}
           ${yn('s18', '1.8. Fuente de financiamiento')}
-          ${yn('s19', '1.9. Correo institucional del investigador')}
         </div>`;
       const sII = `
         <div class="form-grid">
@@ -240,7 +239,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           ${secTpl('IV. METODOLOGÍA DEL PROYECTO', sIV)}
           ${secTpl('V. IDENTIFICACIÓN DEL MERCADO OBJETIVO', sV)}
           ${secTpl('VI. ADMINISTRACIÓN DEL PROYECTO', sVI)}
-          ${secTpl('VII. REFERENCIAS BIBLIOGRÁFICAS Y WEBGRAFÍA', sVII)}
           <div class="form-actions">
             <button id="btnSaveProyecto" class="btn">Guardar borrador</button>
             <button class="btn" onclick="history.back()">Cancelar</button>
@@ -384,3 +382,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     formWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 });
+
